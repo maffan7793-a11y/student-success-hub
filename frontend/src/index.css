@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body bg-base-light text-ink-900 antialiased;
+}
+
+.dark body {
+  @apply bg-base-dark text-white;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+} 
+
+/* Signature element: the glass ID card used across hero, pricing, and the dashboard's Digital ID page */
+.glass-card {
+  @apply relative rounded-xl2 border border-white/40 bg-white/60 backdrop-blur-xl shadow-glass;
+}
+.dark .glass-card {
+  @apply border-white/10 bg-white/5;
+}
+
+.glass-panel {
+  @apply relative rounded-xl2 border border-white/10 bg-white/70 backdrop-blur-lg shadow-glass;
+}
+.dark .glass-panel {
+  @apply bg-surface-dark/70 border-white/10;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-gradient px-6 py-3 font-semibold text-white shadow-glow transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98];
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-900/15 bg-white/80 px-6 py-3 font-semibold text-ink-900 backdrop-blur transition-colors hover:bg-white;
+}
+.dark .btn-secondary {
+  @apply border-white/15 bg-white/5 text-white hover:bg-white/10;
+}
+
+.input {
+  @apply w-full rounded-xl border border-ink-900/10 bg-white/70 px-4 py-3 text-sm text-ink-900 outline-none transition-colors focus:border-brand-violet dark:border-white/10 dark:bg-white/5 dark:text-white;
+}
+
+.section {
+  @apply mx-auto max-w-6xl px-6 py-20;
+}
+
+.eyebrow {
+  @apply mb-3 inline-block rounded-full border border-brand-violet/30 bg-brand-violet/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-violet;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-brand-violet/40;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
